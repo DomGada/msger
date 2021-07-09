@@ -1,6 +1,8 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import React from "react";
+import FormCard from "./components/FormCard/FormCard";
+
 function App() {
   const [data, setData] = useState(null);
 
@@ -12,9 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <p>{!data ? "Loading..." : data}</p>
-      </header>
+      <FormCard />
     </div>
   );
 }

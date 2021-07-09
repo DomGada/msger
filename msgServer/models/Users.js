@@ -8,7 +8,8 @@ const db = require('../config/database');
 const Users = db.define('Users', {
     id: {
         type: DataTypes.INTEGER,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
     },
     friendCode: {
         type: DataTypes.INTEGER
