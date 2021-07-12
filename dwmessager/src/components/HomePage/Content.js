@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: "center",
     flex: 1,
+    height: "100%",
     flexGrow: 1,
     color: theme.palette.text.secondary,
   },
