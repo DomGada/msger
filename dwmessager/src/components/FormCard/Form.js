@@ -4,6 +4,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -130,7 +132,7 @@ export default function ValidationTextFields() {
         >
           SignUp
         </Button>
-        <Button variant="outlined">Cancel</Button>
+        <Button variant="outlined" component={Link} to={"/"}>Cancel</Button>
       </div>
     </form>
   );

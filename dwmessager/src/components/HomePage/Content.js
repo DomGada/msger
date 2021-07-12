@@ -17,11 +17,11 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
   paperSet2: {
-    marginTop: "15px",
+    marginTop: "30px",
   },
   mainContent: {
-    marginLeft: "10px",
-    marginRight: "10px",
+    marginLeft: "30px",
+    marginRight: "30px",
     marginTop: "30px",
   },
   header: {
@@ -74,17 +74,24 @@ export default function Content() {
                 Technologies Used
               </Typography>
               <Typography variant="body2">
-                React, Node, Express, Material-UI
+                <div >
+                  Frontend: We used the ReactJs framework to create our front end web application in conjunction with
+                  Material-UI to enhance the styling for user experience.
+                </div>
+                <div style={{marginTop:"10px"}}>
+                  Backend: For our backend server, we used NodeJs and Express to handle all database queries to
+                  our Postgres server to send data back to the frontend.
+                </div>
               </Typography>
             </Paper>
           </Grid>
         </Grid>
         <Grid container spacing={3} className={classes.paperSet2}>
           <Grid item xs={12} sm={6}>
-            <Paper className={classes.paper}>xs=12 sm=6</Paper>
+            <Paper className={classes.paper}><h4>Dom Things</h4></Paper>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <Paper className={classes.paper}>xs=12 sm=6</Paper>
+            <Paper className={classes.paper}><h4>Wayland Things</h4></Paper>
           </Grid>
         </Grid>
       </div>
