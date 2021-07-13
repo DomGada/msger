@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     const classes = useStyles();
 
   return(
-    <div className="loginWrapper">
+    <div className={classes.loginWrapper}>
       <h1>Please Log In</h1>
       <form>
         <label>

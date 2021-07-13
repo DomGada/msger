@@ -24,12 +24,12 @@ function App() {
             <Route path="/signup">
               <FormCard />
             </Route>
-            <Route path="/">
-              <Home />
-            </Route>
             <Route path="/login">
               <LogIn />
             </Route>
+            <Route path="/">
+              <Home />
+            </Route> 
           </Switch>
         </Router>
       </div>
