@@ -6,7 +6,6 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
@@ -73,6 +72,7 @@ export default function ValidationTextFields() {
           InputLabelProps={{
             shrink: true,
           }}
+          required
           onChange={(e) => setUserName(e.target.value)}
         />
       </div>
@@ -81,13 +81,16 @@ export default function ValidationTextFields() {
           id="standard-full-width"
           label="Password"
           style={{ margin: 8 }}
-          placeholder=""
+          placeholder="enter your password"
           helperText=""
           fullWidth
           margin="normal"
+          type="password"
           InputLabelProps={{
             shrink: true,
           }}
+          required
+          error={password === ""}
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
@@ -103,6 +106,8 @@ export default function ValidationTextFields() {
           InputLabelProps={{
             shrink: true,
           }}
+          required
+          error={firstName === ""}
           onChange={(e) => setFirstName(e.target.value)}
         />
       </div>
@@ -118,6 +123,8 @@ export default function ValidationTextFields() {
           InputLabelProps={{
             shrink: true,
           }}
+          required
+          error={lastName === ""}
           onChange={(e) => setLastName(e.target.value)}
         />
       </div>
@@ -132,7 +139,9 @@ export default function ValidationTextFields() {
         >
           SignUp
         </Button>
-        <Button variant="outlined" component={Link} to={"/"}>Cancel</Button>
+        <Button variant="outlined" component={Link} to={"/"}>
+          Cancel
+        </Button>
       </div>
     </form>
   );
