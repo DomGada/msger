@@ -25,7 +25,7 @@ function App() {
               <FormCard />
             </Route>
             <Route path="/login">
-              <LogIn />
+              <LogIn setToken = {setToken}/>
             </Route>
             <Route path="/">
               <Home />
@@ -36,6 +36,7 @@ function App() {
     );
   }
 
+  console.log("User logged in")
   return (
     <div className="App">
       <Router>

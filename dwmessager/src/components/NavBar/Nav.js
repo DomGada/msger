@@ -47,6 +47,14 @@ export default function Nav() {
             >
               Signup
             </Button>
+            <Button
+              variant="contained"
+              component={Link}
+              to={"/login"}
+              color="default"
+            >
+              Log In
+            </Button>
           </Toolbar>
         </AppBar>
       </div>
