@@ -28,7 +28,7 @@ function App() {
               <LogIn setToken = {setToken}/>
             </Route>
             <Route path="/">
-              <Home />
+              <Home token={token} setToken={setToken}/>
             </Route> 
           </Switch>
         </Router>
@@ -48,7 +48,7 @@ function App() {
             <FormCard />
           </Route>
           <Route path="/">
-            <Home />
+            <Home token={token} setToken={setToken}/>
           </Route>
         </Switch>
       </Router>

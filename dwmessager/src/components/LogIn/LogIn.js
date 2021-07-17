@@ -1,8 +1,7 @@
 import React from 'react';
+import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Redirect } from "react-router-dom";
-
-
 
 const useStyles = makeStyles((theme) => ({
     loginWrapper: {
@@ -14,11 +13,16 @@ const useStyles = makeStyles((theme) => ({
 
   const LogIn = (props) =>  {
     const classes = useStyles();
+    const [redirect, setRedirect] = useState(false);
 
-    const submitUser = (e) => {
-      e.preventDefault();
-      props.setToken(1);
+    const submitUser = () => {
+      setRedirect(true)
+    }
+
+    if (redirect) {
       console.log("Setting token to 1")
+      props.setToken(1);
+      // return <Redirect to="/"/>
     }
 
     return(
