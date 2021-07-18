@@ -13,7 +13,7 @@ function App() {
   // Page gets a token after a call to the backend to verify
   // username and password, then gets token specific to the user
   if (!token) {
-    console.log("No user logged in")
+    console.log("No user logged in");
     return (
       <div className="App">
         <Router>
@@ -24,11 +24,11 @@ function App() {
             <Route path="/signup">
               <FormCard />
             </Route>
-            <Route path="/">
-              <Home />
-            </Route>
             <Route path="/login">
               <LogIn />
+            </Route>
+            <Route path="/">
+              <Home />
             </Route>
           </Switch>
         </Router>
@@ -53,9 +53,6 @@ function App() {
       </Router>
     </div>
   );
-
 }
-
-  
 
 export default App;
