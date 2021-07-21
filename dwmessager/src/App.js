@@ -25,7 +25,10 @@ function App() {
               <FormCard />
             </Route>
             <Route path="/login">
-              <LogIn />
+              <LogIn setToken={setToken} />
+            </Route>
+            <Route exact path="/">
+              <Home token={token} setToken={setToken} />
             </Route>
             <Route path="/">
               <Home />
@@ -36,6 +39,7 @@ function App() {
     );
   }
 
+  console.log("User logged in");
   return (
     <div className="App">
       <Router>
@@ -46,8 +50,8 @@ function App() {
           <Route path="/signup">
             <FormCard />
           </Route>
-          <Route path="/">
-            <Home />
+          <Route exact path="/">
+            <Home token={token} setToken={setToken} />
           </Route>
         </Switch>
       </Router>
