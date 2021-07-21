@@ -1,19 +1,32 @@
-import React from 'react';
+import React from "react";
+import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { Redirect } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
-    loginWrapper: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-    },
-  }));
+  loginWrapper: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+}));
 
-  const LogIn = () =>  {
-    const classes = useStyles();
+const LogIn = (props) => {
+  const classes = useStyles();
+  const [redirect, setRedirect] = useState(false);
 
-  return(
-    <div className="loginWrapper">
+  const submitUser = () => {
+    setRedirect(true);
+  };
+
+  if (redirect) {
+    console.log("Setting token to 1");
+    props.setToken(1);
+    return <Redirect to="/" />;
+  }
+
+  return (
+    <div className={classes.loginWrapper}>
       <h1>Please Log In</h1>
       <form>
         <label>
@@ -25,12 +38,11 @@ const useStyles = makeStyles((theme) => ({
           <input type="password" />
         </label>
         <div>
-          <button type="submit">Submit</button>
+          <button onClick={submitUser}>Submit</button>
         </div>
       </form>
     </div>
-  )
-}
-
+  );
+};
 
 export default LogIn;
